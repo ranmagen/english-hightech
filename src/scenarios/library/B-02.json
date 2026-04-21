@@ -1,0 +1,34 @@
+{
+  "id": "B-02",
+  "title": "Feature Request Email",
+  "level": "beginner",
+  "agents": ["tom"],
+  "goal": "Write a professional email reply to Tom Carter acknowledging his feature request, explaining the process, and setting realistic expectations with a timeline.",
+  "context_doc": "Email from Tom Carter:\n\nSubject: URGENT — Dashboard Export Feature\n\nTo whom it may concern,\n\nOur team has been waiting 3 months for the data export feature in the dashboard. We were promised this in Q3 and it is now Q4. We have 200 users who cannot export their reports. This is affecting our operations.\n\nI need a timeline and a responsible person to contact. This is unacceptable.\n\nBest regards,\nTom Carter\nIT Manager, GlobalCorp",
+  "hint": "Write a professional email with: 1) Acknowledge Tom's frustration, 2) Apologize for the delay, 3) Give a specific timeline and next steps, 4) Provide a contact name. Use formal language!",
+  "success_criteria": {
+    "goal_achieved": true,
+    "min_vocabulary_terms": 2,
+    "agent_satisfaction_score": 3
+  },
+  "branches": [
+    {
+      "trigger": "casual_tone",
+      "agent_response": "tom_formal_request",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "no_timeline",
+      "agent_response": "tom_escalate",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "professional_with_timeline",
+      "agent_response": "tom_positive",
+      "consequence": "bonus_points"
+    }
+  ],
+  "opening_message": "I am waiting for your response to my email about the dashboard export feature. This has been unacceptable. What do you have to say?",
+  "opening_agent": "tom",
+  "writing_mode": "email"
+}

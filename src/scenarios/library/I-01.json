@@ -1,0 +1,33 @@
+{
+  "id": "I-01",
+  "title": "Sprint Review Gone Wrong",
+  "level": "intermediate",
+  "agents": ["mark", "sarah"],
+  "goal": "Communicate a sprint delay to Mark Kim professionally, explain the root cause, provide a recovery plan, and manage his expectations without losing his trust.",
+  "context_doc": "SPRINT 12 STATUS REPORT\n\nOriginal deadline: End of this week (Friday)\nCurrent completion: 60%\nRemaining tasks: 4 features, 2 bug fixes\n\nRoot causes of delay:\n- Sarah's team discovered a critical API compatibility issue (3 days lost)\n- New compliance requirement added mid-sprint by legal team\n- One developer sick for 4 days\n\nProposed new timeline: +8 business days\nRisk if we don't extend: shipping broken features to enterprise clients\n\nKPIs at risk: Q4 launch target, client satisfaction score",
+  "hint": "Start with the bad news clearly, then explain why (root causes), then offer your recovery plan with specific dates. Don't apologize too much — be professional and solution-focused.",
+  "success_criteria": {
+    "goal_achieved": true,
+    "min_vocabulary_terms": 4,
+    "agent_satisfaction_score": 3
+  },
+  "branches": [
+    {
+      "trigger": "blaming_others",
+      "agent_response": "mark_disappointed",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "no_recovery_plan",
+      "agent_response": "mark_demands_plan",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "structured_professional_update",
+      "agent_response": "mark_accepts",
+      "consequence": "bonus_points"
+    }
+  ],
+  "opening_message": "I've been looking at the sprint dashboard and the numbers don't look good. Explain what's happening and what you're doing about it.",
+  "opening_agent": "mark"
+}

@@ -1,0 +1,35 @@
+{
+  "id": "A-01",
+  "title": "Board Pitch",
+  "level": "advanced",
+  "agents": ["mark", "tom"],
+  "goal": "Deliver a 5-minute product pitch presenting a new AI-powered analytics feature. Build 3–5 slides, present clearly, and handle 3 live Q&A questions from Mark and Tom.",
+  "context_doc": "PRODUCT: SmartInsights — AI Analytics Dashboard\n\nKey Features:\n- Real-time data visualization with AI summaries\n- Predictive alerts: warns users before KPIs drop\n- Natural language queries: ask your data in plain English\n- Enterprise SSO + compliance (SOC2, GDPR)\n\nMarket data:\n- 78% of enterprise clients say current reports take too long to generate\n- Competitors: Tableau ($70/user/mo), Power BI ($10/user/mo)\n- Our price point: $25/user/mo\n- Projected ROI for clients: 3x within 6 months\n- Beta results: 12 clients, avg 40% reduction in reporting time\n\nBusiness case:\n- Q1 target: 50 enterprise clients\n- Revenue projection: $3M ARR by Q4\n- Required investment: $800K (engineering + marketing)",
+  "hint": "A great pitch has: 1) Hook (why this matters now), 2) The problem, 3) Your solution, 4) Evidence/data, 5) Ask (what you need). Prepare for tough questions about ROI and timeline!",
+  "success_criteria": {
+    "goal_achieved": true,
+    "min_vocabulary_terms": 5,
+    "agent_satisfaction_score": 4,
+    "presentation_quality_min": 5
+  },
+  "branches": [
+    {
+      "trigger": "no_data_in_pitch",
+      "agent_response": "mark_demands_numbers",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "cant_answer_qa",
+      "agent_response": "tom_loses_confidence",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "strong_data_driven_pitch",
+      "agent_response": "both_impressed",
+      "consequence": "bonus_points"
+    }
+  ],
+  "opening_message": "We're ready to hear your pitch. You have 5 minutes. Make it count.",
+  "opening_agent": "mark",
+  "writing_mode": "presentation"
+}

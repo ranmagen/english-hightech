@@ -1,0 +1,28 @@
+{
+  "id": "B-01",
+  "title": "Monday Standup",
+  "level": "beginner",
+  "agents": ["sarah", "jamie"],
+  "goal": "Deliver a clear status update covering what you completed, what you're working on, and any blockers. Answer 2 follow-up questions clearly.",
+  "context_doc": null,
+  "hint": "In a standup, always cover 3 things: what you completed, what you're working on now, and any blockers (problems stopping you). Keep it short and clear!",
+  "success_criteria": {
+    "goal_achieved": true,
+    "min_vocabulary_terms": 3,
+    "agent_satisfaction_score": 3
+  },
+  "branches": [
+    {
+      "trigger": "vague_update",
+      "agent_response": "sarah_pushback",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "clear_three_part_update",
+      "agent_response": "sarah_positive",
+      "consequence": "bonus_points"
+    }
+  ],
+  "opening_message": "Good morning! Ready for our Monday standup. Who wants to go first? PM, what's your update?",
+  "opening_agent": "sarah"
+}

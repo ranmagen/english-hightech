@@ -1,0 +1,33 @@
+{
+  "id": "I-02",
+  "title": "Cross-Cultural Conflict",
+  "level": "intermediate",
+  "agents": ["priya", "sarah"],
+  "goal": "Mediate a design disagreement between Priya and Sarah. Help both sides feel heard, find common ground, and propose a decision that moves the project forward.",
+  "context_doc": "CONFLICT SUMMARY\n\nThe Issue: Mobile checkout redesign\n\nPriya's position (UX):\n- Wants to add 3 new user confirmation steps to reduce errors\n- Research shows 23% of users make mistakes in current flow\n- Willing to accept 2-week delay for better UX\n\nSarah's position (Engineering):\n- Those 3 steps require 2 additional API calls = performance hit\n- Will add 400ms loading time per step = bad for conversion\n- Proposes: fix 1 most common error only, ship on schedule\n\nCurrent status: Both are at a standstill. Sprint planning is blocked.\nYour role: As PM, you must facilitate a decision.",
+  "hint": "As PM, your job is to help both sides feel heard. Start by summarizing each person's concern, then propose a compromise solution that addresses both — UX improvement AND performance.",
+  "success_criteria": {
+    "goal_achieved": true,
+    "min_vocabulary_terms": 4,
+    "agent_satisfaction_score": 3
+  },
+  "branches": [
+    {
+      "trigger": "taking_sides",
+      "agent_response": "both_agents_unhappy",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "ignoring_one_party",
+      "agent_response": "ignored_agent_withdraws",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "balanced_mediation",
+      "agent_response": "both_agents_positive",
+      "consequence": "bonus_points"
+    }
+  ],
+  "opening_message": "I've reviewed the wireframes and I have serious concerns. The new checkout flow doesn't consider our users with slower connections at all. I think we need to completely rethink this approach.",
+  "opening_agent": "priya"
+}

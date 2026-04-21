@@ -1,0 +1,33 @@
+{
+  "id": "A-02",
+  "title": "Budget Cut Crisis",
+  "level": "advanced",
+  "agents": ["mark", "sarah", "priya", "tom"],
+  "goal": "A 30% budget cut has just been announced. Reprioritize the product roadmap, communicate the changes to all stakeholders, and manage the fallout professionally.",
+  "context_doc": "BUDGET CUT ANNOUNCEMENT\n\nFrom: CFO Office\nTo: All Product Teams\n\nDue to market conditions, Q4 budgets are being reduced by 30% across all departments, effective immediately.\n\nCurrent roadmap (at risk):\n1. SmartInsights AI feature — $300K — was planned for Q4 launch\n2. Mobile app redesign — $150K — Priya's team is 60% done\n3. Enterprise SSO upgrade — $200K — Tom Carter's clients are waiting\n4. Performance optimization — $50K — Sarah says it's critical\n5. New onboarding flow — $80K — Low priority\n\nTotal budget now available: $540K (was $780K)\nYou must cut $240K from the roadmap.\n\nStakeholder expectations:\n- Mark: Protect Q4 revenue targets at all costs\n- Sarah: Don't cut performance work or she says there will be outages\n- Priya: 60% done on mobile — cutting now wastes $90K\n- Tom: SSO upgrade was in his contract — he may leave without it",
+  "hint": "Think strategically: which cuts have the least business impact? Communicate each decision with a reason. Acknowledge the difficulty. Offer alternatives where possible. Use data to justify choices.",
+  "success_criteria": {
+    "goal_achieved": true,
+    "min_vocabulary_terms": 6,
+    "agent_satisfaction_score": 3
+  },
+  "branches": [
+    {
+      "trigger": "cutting_without_explanation",
+      "agent_response": "agents_revolt",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "ignoring_tom",
+      "agent_response": "tom_threatens_to_leave",
+      "consequence": "score_penalty"
+    },
+    {
+      "trigger": "strategic_justified_cuts",
+      "agent_response": "mark_approves",
+      "consequence": "bonus_points"
+    }
+  ],
+  "opening_message": "I just got off the phone with the CFO. 30% budget cut, effective immediately. I need you to come back to me with a revised roadmap by end of day. What's your plan?",
+  "opening_agent": "mark"
+}
